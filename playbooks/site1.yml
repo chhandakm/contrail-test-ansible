@@ -62,7 +62,7 @@
 
    - name: kubeadm init on master
 #     shell: "kubeadm reset > /dev/null >&1; kubeadm init --skip-preflight-checks --token {{ k8s_token }} |grep 'kubeadm join'"
-     shell: "kubeadm reset > /dev/null 2>&1; kubeadm init |grep 'kubeadm join'"
+     shell: "kubeadm reset > /dev/null 2>&1; kubeadm init --kubernetes-version v1.6.7 |grep 'kubeadm join'"
      register: kubeadm_output
    - set_fact:
        kubejoin_cmd: "{{kubeadm_output.stdout}}"
