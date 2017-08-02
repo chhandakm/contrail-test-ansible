@@ -89,8 +89,8 @@
 
    - name: restart kubelet on slaves as workaround for https://github.com/kubernetes/release/issues/171
      systemd:
-     state: restarted
-     name: kubelet
+       state: restarted
+       name: kubelet
 
 - hosts: kubernetes-master
   tasks:
